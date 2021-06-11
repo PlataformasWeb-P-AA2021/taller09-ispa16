@@ -34,6 +34,8 @@ class Estudiante(models.Model):
 class Modulo(models.Model):
     """
     """
+    class Meta:
+        verbose_name_plural = "Los Modulos"
     opciones_modulo = (
         ('1', 'Primero'),
         ('2', 'Segundo'),
@@ -50,6 +52,7 @@ class Modulo(models.Model):
 class Matricula(models.Model):
     """
     """
+    
     estudiante = models.ForeignKey(Estudiante, related_name='lasmatriculas', 
             on_delete=models.CASCADE)
     modulo = models.ForeignKey(Modulo, related_name='lasmatriculas', 
